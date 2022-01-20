@@ -11,6 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'StockController@index');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('users/mypage', function () {
+    return view('users/mypage');
 });
+Route::get('users/listing', 'StockController@userIndex');
+
+Route::get('/users/create',function(){
+   return view('users/create'); 
+});
+
+Route::post('/stocks', 'StockController@store');
+
+
+
