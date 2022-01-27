@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  
 </head>
 <body>
     <div id="app">
@@ -76,5 +77,15 @@
             @yield('content')
         </main>
     </div>
+   <!--  @if(request()->path()==='user/payment/form')-->
+   <!--     @include('parts.payment');-->
+   <!-- @endif-->
+   <!--  <script src="https://js.stripe.com/v3/"></script>-->
+   <!--<script>-->
+   <!-- var stripe_public_key = '{{ config('payment.stripe_public_key') }}';-->
+   <!--</script>-->
+   <!--<script src="{{asset('js/payment.js')}}"></script>-->
+
+   
 </body>
 </html>

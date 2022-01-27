@@ -17,8 +17,8 @@ class CreateStocksTable extends Migration
             $table->bigIncrements('id');
             $table->string('title',100);
             $table->string('body',500);
-            $table->integer('fee');
-            $table->string('imgpath','200')->nullable();
+            $table->integer('fee')->nullable();
+            $table->string('image_path')->nullable();
             $table->timestamps();
         });
     }

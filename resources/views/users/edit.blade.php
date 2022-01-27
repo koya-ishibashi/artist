@@ -1,14 +1,6 @@
-<!DOCTYPE HTML>
-<html lang="{{ str_replace("_", "-", app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>ART</title>
-        
-    </head>
-    <body>
-        <h1>Blog name</h1>
-        <form action="/users/{{ $stock->id }}" method="POST">
+   <body>
+        <h1>出品編集</h1>
+        <form action="/users/{{$stock->id}}" method="POST">
         @csrf
         @method("PUT")
             <div class="title">
@@ -17,7 +9,7 @@
             </div>
             <div class="body">
                 <h2>アイテム詳細</h2>
-                <textarea name="post[body]" placeholder="今日もお疲れ様でした"value=" {{ $stock->body}}"></textarea>
+                <textarea name="stock[body]" placeholder="今日もお疲れ様でした"value=" {{ $stock->body}}"></textarea>
             </div>
             
             <div="fee">
@@ -26,6 +18,5 @@
             
             <input type="submit" value="update"/>
         </form>
-        <div class="back">[<a href="/">back</a>]</div>
+        <div class="back">[<a href="/users/{{$stock->id}}">back</a>]</div>
     </body>
-</html>

@@ -4,12 +4,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Blog</title>
+        <title>ART</title>
         
     </head>
     <body>
+         
          <h1>出品</h1>
-         <form action="/stocks" method="POST">
+         <form action="/stocks" method="POST" enctype="multipart/form-data">
          @csrf
             <div class="title">
                 <h2>アイテム名</h2>
@@ -28,9 +29,12 @@
             </div>
             
             <div class="imgpath">
-                <input type="file" name="stock[imgpath]" placeholder="画像添付" value=" {{old("stock.imgpath")}}" >
                 
+                 <input type="file" id="file" name="file[][image]"  placeholder="画像添付" value=" {{old("stock.image_path")}}" multiple >
+                 <buttom type="submit">画像アップロード</buttom>
+               
             </div>
+            
             <input type="submit" value="保存"/>
         </form>
         <div class="back">[<a href="/">back</a>]</div>

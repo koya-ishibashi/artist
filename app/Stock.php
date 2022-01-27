@@ -10,6 +10,10 @@ class Stock extends Model
      {
        return $this->orderBy('updated_at', 'DESC')->limit($limit_count)->get();
      }
-   protected $fillable = ['title','body','fee'];
+   protected $fillable = ['title','body','fee','image_path'];
 
+   public function images()
+   {
+       return $this->hasMany("App\Image");
+   }
 }
