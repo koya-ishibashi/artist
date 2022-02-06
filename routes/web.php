@@ -1,5 +1,5 @@
 <?php
-
+use App\Mypage;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,8 +15,9 @@ Route::get('/', 'StockController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('users/mypage', function () {
-    return view('users/mypage');
+Route::get('users/mypage', function (Mypage $mypage) {
+  
+    return view('users/mypage')->with(['mypage' => $mypage->latest()->first()]);
 });
 Route::get('users/listing', 'StockController@userIndex');
 
@@ -34,12 +35,10 @@ Route::get('/stocks/{stock}/create','StockController@userForm');
 
 
 
-Route::get('/profile/info' , 'MypageController@show');
+Route::get('/profile/info' , 'MypageController@create');
 
 // Route::post('/profile/info', 'MypageController@store');
-
-
-Route::post('/my' , 'MypageController@show');
+Route::post('/mypage' , 'MypageController@store');
 // Route::post('/users/create', 'StockController@create');
 
 
@@ -58,10 +57,8 @@ Route::post('/my' , 'MypageController@show');
 
 // 決済ボタンを表示するページ
 Route::get('/user/payment/form', 'getPaymentController@index')->name('index');
-
 // Stripeの処理
 Route::get('/payment', 'getPaymentController@payment')->name('payment');
-
 // 決済完了ページ
 Route::get('/user/payment/complete', 'getPaymentController@complete')->name('complete');
 
@@ -74,12 +71,15 @@ Route::get('/create', 'StockController@show');
 
 
 //editのルーティング
-Route::get('users/{stock}/edit', 'StockController@edit');
+Route::get('/users/{stock}/edit', 'StockController@edit');
+Route::put('/users/{stock}', 'StockController@update');
+
+Route::delete('/users/{stock}', 'StockController@delete');
 
 
-
-
-
+//いいね
+Route::get('/reply/like/{stock}', 'LikeController@like')->name('like');
+Route::get('/reply/unlike/{stock}', 'LikeController@unlike')->name('unlike');
 
 
 
