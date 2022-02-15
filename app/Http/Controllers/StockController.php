@@ -51,9 +51,9 @@ class StockController extends Controller
      public function index(Stock $stock)
        {
           return view('index')->with(['stocks' => $stock->getByLimit()]); 
-
           
-         
+
+
        }
        
        
@@ -90,7 +90,7 @@ class StockController extends Controller
       
       //update
       
-       public function update(Request $request, Stock $stock)
+       public function update(IndexRequest $request, Stock $stock)
       {
                
         $input = $request['stock'];
@@ -120,14 +120,6 @@ class StockController extends Controller
          $stock->delete();
           return redirect('/users/listing');
     }
-
-      
-    //   //like
-    // public function likeShow(Stock $stock)
-    // {  
- 
-    //     $like=Like::where('stock_id', $stock->id)->where('user_id', auth()->user()->id)->first();
-    //     return view('/', compact('stock', 'like'))->with(['likes' => $like->getByLimit()]); 
-    // }
-       
+    
+    
 }

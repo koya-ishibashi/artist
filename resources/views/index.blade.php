@@ -90,6 +90,7 @@
 
     </head>
     <body>
+       
       
         <div class="navbar navbar-expand-md navbar-dark">
             @if (Route::has('login'))
@@ -124,10 +125,13 @@
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
            </div>
-                <HR SIZE="10">     
+           
+                  
                     <br>    
                     <br>
                 <section>
+                 <div class="p-3 mb-2 bg-light text-dark">   
+
                     <div class="section-title" style="text-align:center;">
                         出品のやり方
                     </div>
@@ -144,9 +148,11 @@
                         </div>
                       </div>    
                     </div>
+                 </div>
+
                 </section>  
                 <br>
-                <HR SIZE="10">
+              
                 <br>
                 
                 <div class="containr">
@@ -183,13 +189,12 @@
                                <p class="ml-1">{{$stock->fee}}円</p>
                               <!--</div>-->
                             <div class="buy">
-                             <button><a href="/stocks/{{ $stock->id }}/create" class="btn btn-primary">購入</a></button>
+                          <a href="/stocks/{{ $stock->id }}/create" class="btn btn-primary">購入</a>
                             </div>
                          
                          
-<!--                         //いいね -->
-
-                           
+<!-- //いいね -->
+         
                            
                           
                          </div>
