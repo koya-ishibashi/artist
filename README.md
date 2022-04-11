@@ -18,6 +18,8 @@ ART(美大生向けのECサイトです。)
 
 # Use language
 laravelを中心に使用し、作成しています。
+AWS/PHP/laravel/html/CSS/S3/Github/stripe等の技術を用いてECサイトを作成。 
+ユーザー登録機能、出品機能、購入機能、画像表示機能を実装しています。
  
 # Note
 このECサイトは現在作成中、プロトタイプの状態です。
@@ -27,3 +29,5 @@ laravelを中心に使用し、作成しています。
 * 作成者　：石橋　昂也
 * E-mail   : guran1484@gmail.com
  
+＃DEMO
+録画は別途で送らせていただきます。
