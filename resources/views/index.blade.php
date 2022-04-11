@@ -79,6 +79,7 @@
               overflow-x:scroll;
       <!--         display: inline-block;-->
       <!--         width: 90%;-->
+           
 
       <!--/* 見た目調整 */-->
       <!--        height: 400px;-->
@@ -165,7 +166,7 @@
                         <br>
                
                     @foreach ($stocks as $stock) 
-                    <div class="col-4 card" style="height:20%; margin-button:10px;" >
+                    <div class="col-4 card d-flex" style="height:20%; margin-button:10px;" >
                      
                          <!--<div class="card container" style="width: 18rem;">-->
                           
